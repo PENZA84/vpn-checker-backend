@@ -69,68 +69,62 @@ URLS_RU = [
     "https://etoneya.a9fm.site/1",
     "https://s3c3.001.gpucloud.ru/vahe4xkwi/cjdr",
     "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_universal.txt",
-  "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_lite.txt",
-  "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt",
-  "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt",
-  "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt",
-  "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt",
-  "https://key.zarazaex.xyz/sub",
-  "https://rostunnel.vercel.app/mega.txt",
-  "https://subrostunnel.vercel.app/wl.txt",
-  "https://subrostunnel.vercel.app/gen.txt",
-  "https://etoneya.su/whitelist",
-  "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/WHITE-CIDR-RU-all.txt",
-  "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/WHITE-CIDR-RU-checked.txt",
-  "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
-  "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/WHITE-SNI-RU-all.txt",
-  "https://gist.githubusercontent.com/DestroyST6767/50af50221ca1858ba2084efc0f524fbc/raw/1dc2f8edf8b2d7ab2a85ffd970208aa6fbb65a8e/Destroy_ST%2520%25D0%2591%25D0%25A1",
-  "https://gitverse.ru/api/repos/bywarm/rser/raw/branch/master/selected.txt",
-  "https://gitverse.ru/api/repos/bywarm/rser/raw/branch/master/wl.txt",
-  "https://gitverse.ru/api/repos/bywarm/rser/raw/branch/master/merged.txt",
-  "https://raw.githubusercontent.com/Alex999ooo/VPN-for-Russia-/refs/heads/main/VPN%20by%20Alex999ooo%20%F0%9F%8F%B3%EF%B8%8F",
-  "https://raw.githubusercontent.com/prominbro/sub/refs/heads/main/212.txt",
-  "https://raw.githubusercontent.com/dmitriistekolnikov/Free_vpns_for_Russ/refs/heads/main/Vrema.txt",
-  "https://raw.githubusercontent.com/dmitriistekolnikov/Free_vpns_for_Russ/refs/heads/main/Vip.txt",
-  "https://raw.githubusercontent.com/Temnuk/naabuzil/refs/heads/main/whitelist_full",
-  "https://raw.githubusercontent.com/Temnuk/naabuzil/refs/heads/main/whitelist",
-  "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/WHITELIST-ALL.txt",
-  "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/1sub.txt",
-  "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/2sub.txt",
-  "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/3sub.txt",
-  "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/4sub.txt",
-  "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/5sub.txt",
-  "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/best_keys.txt",
-  "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/good_keys.txt",
-  "https://raw.githubusercontent.com/AirLinkVPN1/AirLinkVPN/refs/heads/main/rkn_white_list",
-  "https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/refs/heads/main/kizyakbeta7.txt",
-  "https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/refs/heads/main/kizyakbeta6.txt",
-  "https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/refs/heads/main/kizyaktestru.txt",
-  "https://obwl.vercel.app/configs/configs.txt",
-  "https://obwl.vercel.app/configs/selected.txt",
-  "https://tinyurl.com/AeryxVPNyandexua",
-  "https://raw.githubusercontent.com/VOID-Anonymity/V.O.I.D-VPN_Bypass/refs/heads/main/url_work.txt",
-  "https://raw.githubusercontent.com/dequar/deqwl/refs/heads/main/deray.txt",
-  "https://tinyurl.com/scalavpnbot",
-  "https://raw.githubusercontent.com/kama55726/KomaryServers/refs/heads/main/KomaryServ",
-  "https://raw.githubusercontent.com/LimeHi/Old-Context-Menu/refs/heads/main/afg.txt",
-  "https://raw.githubusercontent.com/nzea243/ikoV31tud_vpn/refs/heads/main/tri_228.txt",
-  "https://raw.githubusercontent.com/mbelspb-gif/gdffgd/refs/heads/main/Swordware.net",
-  "https://gist.githubusercontent.com/flaafix/c79a81037d15163360571c7a7331b153/raw/AetrisVPN.txt",
-  "https://raw.githubusercontent.com/HalyavusVPNUS/halyava-vpn-lte/refs/heads/main/lte.txt"
+    "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_lite.txt",
+    "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt",
+    "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt",
+    "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt",
+    "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt",
+    "https://key.zarazaex.xyz/sub",
+    "https://rostunnel.vercel.app/mega.txt",
+    "https://subrostunnel.vercel.app/wl.txt",
+    "https://subrostunnel.vercel.app/gen.txt",
+    "https://etoneya.su/whitelist",
+    "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/WHITE-CIDR-RU-all.txt",
+    "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/WHITE-CIDR-RU-checked.txt",
+    "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
+    "https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/refs/heads/main/WHITE-SNI-RU-all.txt",
+    "https://gist.githubusercontent.com/DestroyST6767/50af50221ca1858ba2084efc0f524fbc/raw/1dc2f8edf8b2d7ab2a85ffd970208aa6fbb65a8e/Destroy_ST%2520%25D0%2591%25D0%25A1",
+    "https://gitverse.ru/api/repos/bywarm/rser/raw/branch/master/selected.txt",
+    "https://gitverse.ru/api/repos/bywarm/rser/raw/branch/master/wl.txt",
+    "https://gitverse.ru/api/repos/bywarm/rser/raw/branch/master/merged.txt",
+    "https://raw.githubusercontent.com/Alex999ooo/VPN-for-Russia-/refs/heads/main/VPN%20by%20Alex999ooo%20%F0%9F%8F%B3%EF%B8%8F",
+    "https://raw.githubusercontent.com/prominbro/sub/refs/heads/main/212.txt",
+    "https://raw.githubusercontent.com/dmitriistekolnikov/Free_vpns_for_Russ/refs/heads/main/Vrema.txt",
+    "https://raw.githubusercontent.com/dmitriistekolnikov/Free_vpns_for_Russ/refs/heads/main/Vip.txt",
+    "https://raw.githubusercontent.com/Temnuk/naabuzil/refs/heads/main/whitelist_full",
+    "https://raw.githubusercontent.com/Temnuk/naabuzil/refs/heads/main/whitelist",
+    "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/WHITELIST-ALL.txt",
+    "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/1sub.txt",
+    "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/2sub.txt",
+    "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/3sub.txt",
+    "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/4sub.txt",
+    "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/subscriptions/5sub.txt",
+    "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/best_keys.txt",
+    "https://raw.githubusercontent.com/ksenkovsolo/HardVPN-bypass-WhiteLists-/refs/heads/main/vpn-lte/good_keys.txt",
+    "https://raw.githubusercontent.com/AirLinkVPN1/AirLinkVPN/refs/heads/main/rkn_white_list",
+    "https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/refs/heads/main/kizyakbeta7.txt",
+    "https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/refs/heads/main/kizyakbeta6.txt",
+    "https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/refs/heads/main/kizyaktestru.txt",
+    "https://obwl.vercel.app/configs/configs.txt",
+    "https://obwl.vercel.app/configs/selected.txt",
+    "https://tinyurl.com/AeryxVPNyandexua",
+    "https://raw.githubusercontent.com/VOID-Anonymity/V.O.I.D-VPN_Bypass/refs/heads/main/url_work.txt",
+    "https://raw.githubusercontent.com/dequar/deqwl/refs/heads/main/deray.txt",
+    "https://tinyurl.com/scalavpnbot",
+    "https://raw.githubusercontent.com/kama55726/KomaryServers/refs/heads/main/KomaryServ",
+    "https://raw.githubusercontent.com/LimeHi/Old-Context-Menu/refs/heads/main/afg.txt",
+    "https://raw.githubusercontent.com/nzea243/ikoV31tud_vpn/refs/heads/main/tri_228.txt",
+    "https://raw.githubusercontent.com/mbelspb-gif/gdffgd/refs/heads/main/Swordware.net",
+    "https://gist.githubusercontent.com/flaafix/c79a81037d15163360571c7a7331b153/raw/AetrisVPN.txt",
+    "https://raw.githubusercontent.com/HalyavusVPNUS/halyava-vpn-lte/refs/heads/main/lte.txt"
 ]
 
+# ==================== ИСПРАВЛЕННЫЙ СПИСОК URLS_MY ====================
 URLS_MY = [
-    # 🔹 Максимум источников от Mirror — общий белый список
-    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/githubmirror/new/all_new.txt",
-    # 🔹 Более аккуратный вход — уже дедупленные по IP:PORT:SCHEME clean/*.txt
-    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/githubmirror/clean/vless.txt",
-    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/githubmirror/clean/vmess.txt",
-    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/githubmirror/clean/trojan.txt",
-    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/githubmirror/clean/ss.txt",
-    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/githubmirror/clean/hysteria.txt",
-    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/githubmirror/clean/hysteria2.txt",
-    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/githubmirror/clean/hy2.txt",
-    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/githubmirror/clean/tuic.txt",
+    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/archive/subscriptions/all_base64.txt",
+    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/archive/subscriptions/all.txt",
+    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/archive/subscriptions/sni_filtered_base64.txt",
+    "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/archive/my_sources/generated/vless.txt",
 ]
 
 EURO_CODES = {
@@ -176,7 +170,7 @@ def country_to_flag(code: str) -> str:
 # ==================== GEO-API + КЭШИ ====================
 
 # --- Дисковый кэш IP → {country, time} ---
-_disk_ip_cache: dict = {}   # ip → {"country": "XX", "time": float}
+_disk_ip_cache: dict = {}
 
 def load_ip_cache():
     global _disk_ip_cache
@@ -186,7 +180,6 @@ def load_ip_cache():
                 _disk_ip_cache = json.load(f)
         except Exception:
             _disk_ip_cache = {}
-    # Чистим устаревшие записи
     cutoff = time.time() - IP_CACHE_MAX_AGE_DAYS * 86400
     _disk_ip_cache = {k: v for k, v in _disk_ip_cache.items() if v.get("time", 0) > cutoff}
 
@@ -200,7 +193,7 @@ def save_ip_cache():
 
 _ip_cache_lock = threading.Lock()
 
-# --- In-memory кэш host → IP (на время запуска) ---
+# --- In-memory кэш host → IP ---
 _host_to_ip: dict = {}
 _host_ip_lock = threading.Lock()
 
@@ -220,11 +213,9 @@ def resolve_host(host: str) -> str | None:
 
 # --- Троттлинг ip-api ---
 _geo_rate_lock = threading.Lock()
-_geo_request_times: list = []      # timestamps последних запросов
-_ip_api_disabled = False            # True после HTTP 429
-
-# --- Счётчики источников страны ---
-_geo_stats = defaultdict(int)   # ключи: "api", "cache", "fast", "unknown"
+_geo_request_times: list = []
+_ip_api_disabled = False
+_geo_stats = defaultdict(int)
 _geo_stats_lock = threading.Lock()
 
 def _inc_geo_stat(key: str):
@@ -232,25 +223,18 @@ def _inc_geo_stat(key: str):
         _geo_stats[key] += 1
 
 def _geo_api_wait_slot() -> bool:
-    """
-    Ждёт, пока не освободится слот в окне GEO_API_RATE_LIMIT / GEO_API_WINDOW.
-    Возвращает False, если ip_api отключён.
-    """
     global _ip_api_disabled
     if _ip_api_disabled:
         return False
     with _geo_rate_lock:
         now = time.time()
-        # Убираем метки старше окна
         cutoff = now - GEO_API_WINDOW
         while _geo_request_times and _geo_request_times[0] < cutoff:
             _geo_request_times.pop(0)
         if len(_geo_request_times) >= GEO_API_RATE_LIMIT:
-            # Ждём до освобождения окна
             sleep_time = GEO_API_WINDOW - (now - _geo_request_times[0]) + 0.1
             if sleep_time > 0:
                 time.sleep(sleep_time)
-            # Чистим ещё раз после ожидания
             now = time.time()
             cutoff = now - GEO_API_WINDOW
             while _geo_request_times and _geo_request_times[0] < cutoff:
@@ -260,39 +244,21 @@ def _geo_api_wait_slot() -> bool:
 
 
 def detect_exit_country_via_http(proxy_host: str) -> str:
-    """
-    Определяет exit-страну сервера через ip-api.com.
-    Порядок проверки:
-      1. In-memory / дисковый кэш (ip → страна)
-      2. Запрос к ip-api с троттлингом
-      3. При 429 или ошибке — UNKNOWN (без повторных попыток к API)
-    """
     global _ip_api_disabled
-
     ip = resolve_host(proxy_host)
     if not ip:
         return "UNKNOWN"
-
-    # Сначала кэш
     with _ip_cache_lock:
         cached = _disk_ip_cache.get(ip)
     if cached:
         _inc_geo_stat("cache")
         return cached["country"]
-
-    # Если API отключён (429) — сразу UNKNOWN
     if _ip_api_disabled:
         return "UNKNOWN"
-
-    # Ждём слот и делаем запрос
     if not _geo_api_wait_slot():
         return "UNKNOWN"
-
     try:
-        r = requests.get(
-            f"http://ip-api.com/json/{ip}?fields=countryCode",
-            timeout=4
-        )
+        r = requests.get(f"http://ip-api.com/json/{ip}?fields=countryCode", timeout=4)
         if r.status_code == 429:
             _ip_api_disabled = True
             print("⚠️  ip-api вернул 429 (rate limit) — geo-API отключён до конца запуска")
@@ -305,14 +271,12 @@ def detect_exit_country_via_http(proxy_host: str) -> str:
             return code
     except Exception:
         pass
-
     return "UNKNOWN"
 
 
 # ==================== Вспомогательные функции ====================
 
 def get_country_fast(host: str, key_name: str) -> str:
-    """Быстрый hint по доменному суффиксу / тексту ключа. Только fallback."""
     try:
         host_l = host.lower()
         name_u = key_name.upper()
@@ -335,7 +299,6 @@ def get_country_fast(host: str, key_name: str) -> str:
 
 
 def _has_many_ru_markers(host: str, key_str: str) -> bool:
-    """True, если хост/ключ содержит 2+ жёстких RU‑маркера."""
     count = 0
     host_lower = host.lower()
     key_upper = key_str.upper()
@@ -404,7 +367,6 @@ def fetch_keys(urls, tag):
 
 # ==================== Проверка одного ключа ====================
 
-# Типы ошибок для статистики
 ERR_TIMEOUT = "timeout"
 ERR_TLS = "tls"
 ERR_DNS = "dns"
@@ -419,14 +381,10 @@ def _inc_err(kind: str):
 
 
 def check_single_key(data):
-    """
-    Возвращает: (latency_ms | None, tag, country, host, original_key, err_type | None)
-    """
     key, tag = data
     try:
         if "@" not in key or ":" not in key:
             return None, None, None, None, key, ERR_OTHER
-
         part = key.split("@")[1].split("?")[0].split("#")[0]
         host_port = part.split(":")
         host = host_port[0]
@@ -434,11 +392,10 @@ def check_single_key(data):
     except Exception:
         return None, None, None, None, key, ERR_OTHER
 
-    # Ранний отказ для MY-ключей с явными RU-маркерами (ещё до сетевого соединения)
     if tag == "MY":
         fast_hint = get_country_fast(host, key)
         if fast_hint == "RU" and _has_many_ru_markers(host, key):
-            return None, None, None, None, key, ERR_OTHER  # тихо в BLACK
+            return None, None, None, None, key, ERR_OTHER
 
     is_tls = (
         "security=tls" in key or
@@ -453,7 +410,6 @@ def check_single_key(data):
         path = unquote(match.group(1))
 
     start = time.time()
-    err_type = None
 
     try:
         if is_ws:
@@ -475,7 +431,6 @@ def check_single_key(data):
         else:
             with socket.create_connection((host, port), timeout=TIMEOUT):
                 pass
-
     except socket.timeout:
         _inc_err(ERR_TIMEOUT)
         return None, None, None, None, key, ERR_TIMEOUT
@@ -486,7 +441,6 @@ def check_single_key(data):
         _inc_err(ERR_DNS)
         return None, None, None, None, key, ERR_DNS
     except OSError as e:
-        # Таймаут через ОС (ETIMEDOUT, ECONNREFUSED и т.п.)
         msg = str(e).lower()
         if "timed out" in msg or "timeout" in msg:
             _inc_err(ERR_TIMEOUT)
@@ -498,8 +452,6 @@ def check_single_key(data):
         return None, None, None, None, key, ERR_OTHER
 
     latency = int((time.time() - start) * 1000)
-
-    # Определяем exit-страну
     country_exit = detect_exit_country_via_http(host)
 
     if country_exit == "UNKNOWN":
@@ -588,8 +540,6 @@ def save_chunked(keys_list, folder, base_name, chunk_size=None):
     return file_names
 
 
-# ==================== JSON-хелперы ====================
-
 def load_json(path):
     if os.path.exists(path):
         try:
@@ -608,13 +558,10 @@ def save_json(path, data):
         pass
 
 
-# ==================== Генерация subscriptions_list.txt ====================
-
 def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, euro_all_files):
     GITHUB_USER_REPO = "kort0881/vpn-checker-backend"
     BRANCH = "main"
     BASE_RAW = f"https://raw.githubusercontent.com/{GITHUB_USER_REPO}/{BRANCH}"
-
     subs_lines = []
 
     def nonempty_files(folder, filenames):
@@ -625,7 +572,6 @@ def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, eu
                 out.append(fname)
         return out
 
-    # RUSSIA FAST
     ru_fast_nonempty = nonempty_files(FOLDER_RU, ru_fast_files)
     if ru_fast_nonempty:
         subs_lines.append("=== 🇷🇺 RUSSIA (FAST) ===")
@@ -633,7 +579,6 @@ def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, eu
             subs_lines.append(f"{BASE_RAW}/checked/RU_Best/{filename}")
         subs_lines.append("")
 
-    # RUSSIA ALL
     ru_all_nonempty = nonempty_files(FOLDER_RU, ru_all_files)
     if ru_all_nonempty:
         subs_lines.append("=== 🇷🇺 RUSSIA (ALL) ===")
@@ -641,7 +586,6 @@ def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, eu
             subs_lines.append(f"{BASE_RAW}/checked/RU_Best/{fname}")
         subs_lines.append("")
 
-    # EUROPE FAST
     euro_fast_nonempty = nonempty_files(FOLDER_EURO, euro_fast_files)
     if euro_fast_nonempty:
         subs_lines.append("=== 🇪🇺 EUROPE (FAST) ===")
@@ -649,7 +593,6 @@ def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, eu
             subs_lines.append(f"{BASE_RAW}/checked/My_Euro/{filename}")
         subs_lines.append("")
 
-    # EUROPE ALL
     euro_all_nonempty = nonempty_files(FOLDER_EURO, euro_all_files)
     if euro_all_nonempty:
         subs_lines.append("=== 🇪🇺 EUROPE (ALL) ===")
@@ -657,7 +600,6 @@ def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, eu
             subs_lines.append(f"{BASE_RAW}/checked/My_Euro/{fname}")
         subs_lines.append("")
 
-    # WHITE/BLACK — только если есть непустые файлы
     ru_white_path = os.path.join(FOLDER_RU, "ru_white_all_WHITE.txt")
     if os.path.exists(ru_white_path) and os.path.getsize(ru_white_path) > 0:
         subs_lines.append("=== ✅ WHITE RUSSIA (ALL) ===")
@@ -690,7 +632,6 @@ def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, eu
     for line in subs_lines:
         if line:
             print(f"  {line}")
-
     return subs_path
 
 
@@ -700,7 +641,6 @@ if __name__ == "__main__":
     print("=== CHECKER v6 (FAST/ALL + WHITE/BLACK + GEO-CACHE + THROTTLE) ===")
     print(f"Параметры: CACHE={CACHE_HOURS}h, MAX_PING={MAX_PING_MS}ms, FAST={FAST_LIMIT}, HISTORY={MAX_HISTORY_AGE // 3600}h")
 
-    # Загружаем дисковый кэш IP → страна
     load_ip_cache()
     print(f"📂 Дисковый ip_cache загружен: {len(_disk_ip_cache)} записей")
 
@@ -709,7 +649,6 @@ if __name__ == "__main__":
 
     unique_tasks = {k: tag for k, tag in tasks}
     all_items = list(unique_tasks.items())
-
     if len(all_items) > MAX_KEYS_TO_CHECK:
         all_items = all_items[:MAX_KEYS_TO_CHECK]
 
@@ -719,21 +658,18 @@ if __name__ == "__main__":
     res_euro = []
     dead_ru = []
     dead_euro = []
-    euro_filtered_ru = 0  # счётчик EURO-ключей, отфильтрованных как RU-exit
+    euro_filtered_ru = 0
 
     print(f"\n📊 Всего уникальных ключей: {len(all_items)}")
 
     for k, tag in all_items:
         k_id = k.split("#")[0]
         cached = history.get(k_id)
-
         if cached and (current_time - cached["time"] < CACHE_HOURS * 3600) and cached["alive"]:
-
             latency = cached["latency"]
             country = cached.get("country", "UNKNOWN")
             host = cached.get("host", "")
             final = make_final_key(k_id, latency, country)
-
             if tag == "RU":
                 res_ru.append(final)
             elif tag == "MY":
@@ -749,10 +685,8 @@ if __name__ == "__main__":
 
     if to_check:
         checked_ok = 0
-
         with ThreadPoolExecutor(max_workers=THREADS) as executor:
             future_map = {executor.submit(check_single_key, item): item for item in to_check}
-
             for future in as_completed(future_map):
                 key, tag = future_map[future]
                 try:
@@ -763,14 +697,12 @@ if __name__ == "__main__":
                     else:
                         dead_euro.append(key)
                     continue
-
                 if latency is None:
                     if tag == "RU":
                         dead_ru.append(original_key)
                     elif tag == "MY":
                         dead_euro.append(original_key)
                     continue
-
                 k_id = original_key.split("#")[0]
                 history[k_id] = {
                     "alive": True,
@@ -779,9 +711,7 @@ if __name__ == "__main__":
                     "country": country,
                     "host": host,
                 }
-
                 final = make_final_key(k_id, latency, country)
-
                 if tag == "RU":
                     res_ru.append(final)
                 elif tag == "MY":
@@ -790,16 +720,12 @@ if __name__ == "__main__":
                         dead_euro.append(original_key)
                     else:
                         res_euro.append(final)
-
                 checked_ok += 1
-
         print(f"✅ Проверено успешно: {checked_ok}")
 
-    # Сохраняем дисковый кэш IP
     save_ip_cache()
     print(f"💾 ip_cache сохранён: {len(_disk_ip_cache)} записей")
 
-    # Чистим историю
     save_json(
         HISTORY_FILE,
         {k: v for k, v in history.items() if current_time - v["time"] < MAX_HISTORY_AGE}
@@ -842,10 +768,8 @@ if __name__ == "__main__":
     save_exact(res_euro_clean, FOLDER_EURO, "my_euro_all_WHITE.txt")
     save_exact(dead_euro, FOLDER_EURO, "my_euro_all_BLACK.txt")
 
-    # Генерация subscriptions_list.txt с динамическими ссылками
     generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, euro_all_files)
 
-    # ==================== ФИНАЛЬНЫЙ ОТЧЁТ ====================
     print("\n" + "=" * 55)
     print("📊 ФИНАЛЬНЫЙ ОТЧЁТ")
     print("=" * 55)
@@ -874,7 +798,6 @@ if __name__ == "__main__":
         print(f"  {kind:8s}: {n:5d}  ({n * 100 // total_err}%)")
 
     print("\n✅ SUCCESS: FAST/ALL + WHITE/BLACK GENERATED")
-
 
 
 
