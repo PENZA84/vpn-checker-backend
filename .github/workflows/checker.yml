@@ -45,14 +45,14 @@ jobs:
       - name: Remove null bytes from checked files
         run: |
           find checked/ -name "*.txt" -exec sed -i 's/\x00//g' {} \;
-          find checked/ -name "*.json" -exec sed -i 's/\x00//g' {} \;
+          find checked/ -name "*.json" -exec sed -i 's/\x00//g' {} \; || true
 
-      - name: Commit & Push (direct)
+      - name: Commit & Push
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add checked/subscriptions_list.txt
-          git add checked/**/*.txt
-          git add checked/**/*.json
-          git commit -m "🤖 Auto-update checked keys [${{ github.run_id }}]" || echo "No changes"
+          git add checked/subscriptions_list.txt || true
+          git add checked/**/*.txt || true
+          git add checked/**/*.json || true
+          git commit -m "🤖 Auto-update checked keys [${{ github.run_id }}]" || echo "No changes to commit"
           git push --force-with-lease origin main
