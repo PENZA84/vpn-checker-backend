@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import re
 import socket
@@ -9,6 +10,8 @@ import base64
 import websocket
 import shutil
 import threading
+import urllib.parse
+from datetime import datetime
 from urllib.parse import unquote
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
@@ -119,7 +122,6 @@ URLS_RU = [
     "https://raw.githubusercontent.com/HalyavusVPNUS/halyava-vpn-lte/refs/heads/main/lte.txt"
 ]
 
-# ==================== ИСПРАВЛЕННЫЙ СПИСОК URLS_MY ====================
 URLS_MY = [
     "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/archive/subscriptions/all_base64.txt",
     "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/archive/subscriptions/all.txt",
@@ -166,10 +168,32 @@ def country_to_title_ru(code: str) -> str:
 def country_to_flag(code: str) -> str:
     return COUNTRY_FLAGS.get(code, "")
 
+# ---------- FIX UNIVERSAL (исправляет type=xhttp -> http) ----------
+def fix_universal(key: str) -> str:
+    key = key.strip()
+    if not key.startswith("vless://") or "type=xhttp" not in key:
+        return key
+    try:
+        parsed = urllib.parse.urlparse(key)
+        query = urllib.parse.parse_qs(parsed.query)
+        if query.get("type", [""])[0].lower() == "xhttp":
+            query["type"] = ["http"]
+        new_query = urllib.parse.urlencode(query, doseq=True)
+        return urllib.parse.urlunparse(
+            (
+                parsed.scheme,
+                parsed.netloc,
+                parsed.path,
+                parsed.params,
+                new_query,
+                parsed.fragment,
+            )
+        )
+    except Exception:
+        return key
 
 # ==================== GEO-API + КЭШИ ====================
 
-# --- Дисковый кэш IP → {country, time} ---
 _disk_ip_cache: dict = {}
 
 def load_ip_cache():
@@ -193,7 +217,6 @@ def save_ip_cache():
 
 _ip_cache_lock = threading.Lock()
 
-# --- In-memory кэш host → IP ---
 _host_to_ip: dict = {}
 _host_ip_lock = threading.Lock()
 
@@ -211,7 +234,6 @@ def resolve_host(host: str) -> str | None:
             _host_to_ip[host] = None
         return None
 
-# --- Троттлинг ip-api ---
 _geo_rate_lock = threading.Lock()
 _geo_request_times: list = []
 _ip_api_disabled = False
@@ -241,7 +263,6 @@ def _geo_api_wait_slot() -> bool:
                 _geo_request_times.pop(0)
         _geo_request_times.append(time.time())
     return True
-
 
 def detect_exit_country_via_http(proxy_host: str) -> str:
     global _ip_api_disabled
@@ -273,9 +294,6 @@ def detect_exit_country_via_http(proxy_host: str) -> str:
         pass
     return "UNKNOWN"
 
-
-# ==================== Вспомогательные функции ====================
-
 def get_country_fast(host: str, key_name: str) -> str:
     try:
         host_l = host.lower()
@@ -297,7 +315,6 @@ def get_country_fast(host: str, key_name: str) -> str:
         pass
     return "UNKNOWN"
 
-
 def _has_many_ru_markers(host: str, key_str: str) -> bool:
     count = 0
     host_lower = host.lower()
@@ -308,7 +325,6 @@ def _has_many_ru_markers(host: str, key_str: str) -> bool:
             if count >= 2:
                 return True
     return False
-
 
 def is_russian_exit(key_str: str, host: str, country: str) -> bool:
     if country == "RU":
@@ -321,7 +337,6 @@ def is_russian_exit(key_str: str, host: str, country: str) -> bool:
             return True
     return False
 
-
 def is_garbage_text(key_str: str) -> bool:
     upper = key_str.upper()
     for m in BAD_MARKERS:
@@ -330,9 +345,6 @@ def is_garbage_text(key_str: str) -> bool:
     if ".ir" in key_str or ".cn" in key_str or "127.0.0.1" in key_str:
         return True
     return False
-
-
-# ==================== Загрузка ключей ====================
 
 def fetch_keys(urls, tag):
     out = []
@@ -364,9 +376,6 @@ def fetch_keys(urls, tag):
             pass
     return out
 
-
-# ==================== Проверка одного ключа ====================
-
 ERR_TIMEOUT = "timeout"
 ERR_TLS = "tls"
 ERR_DNS = "dns"
@@ -378,7 +387,6 @@ _err_stats_lock = threading.Lock()
 def _inc_err(kind: str):
     with _err_stats_lock:
         _err_stats[kind] += 1
-
 
 def check_single_key(data):
     key, tag = data
@@ -463,16 +471,13 @@ def check_single_key(data):
 
     return latency, tag, country_exit, host, key, None
 
-
-# ==================== Форматирование / сохранение ====================
-
 def make_final_key(k_id, latency, country):
     title_ru = country_to_title_ru(country)
     flag = country_to_flag(country)
     title_full = f"{title_ru} {country}" if country and country != "UNKNOWN" else title_ru
     info_str = f"[{latency}ms {title_full} {flag} {MY_CHANNEL}]"
-    return f"{k_id}#{info_str}"
-
+    raw = f"{k_id}#{info_str}"
+    return fix_universal(raw)   # применяем исправление xhttp
 
 def extract_ping(key_str):
     try:
@@ -484,13 +489,13 @@ def extract_ping(key_str):
     except Exception:
         return None
 
-
 def save_exact(keys, folder, filename):
     path = os.path.join(folder, filename)
     with open(path, "w", encoding="utf-8") as f:
-        f.write("\n".join(keys) if keys else "")
+        # очищаем каждый ключ от type=xhttp
+        cleaned = [fix_universal(k.strip()) for k in keys if k and k.strip()]
+        f.write("\n".join(cleaned))
     return path
-
 
 def save_fixed_chunks_ru(keys_list, folder):
     valid_keys = [k.strip() for k in keys_list if k and k.strip()]
@@ -508,7 +513,6 @@ def save_fixed_chunks_ru(keys_list, folder):
         file_names.append(filename)
     return file_names
 
-
 def save_fixed_chunks_euro(keys_list, folder):
     valid_keys = [k.strip() for k in keys_list if k and k.strip()]
     chunks = [
@@ -525,11 +529,11 @@ def save_fixed_chunks_euro(keys_list, folder):
         file_names.append(filename)
     return file_names
 
-
 def save_chunked(keys_list, folder, base_name, chunk_size=None):
     if chunk_size is None:
         chunk_size = CHUNK_LIMIT
     valid_keys = [k.strip() for k in keys_list if k and k.strip()]
+    # тоже очищаем через save_exact позже
     chunks = [valid_keys[i:i + chunk_size] for i in range(0, len(valid_keys), chunk_size)]
     file_names = []
     for idx, chunk in enumerate(chunks, start=1):
@@ -538,7 +542,6 @@ def save_chunked(keys_list, folder, base_name, chunk_size=None):
         file_names.append(filename)
         print(f"  {filename}: {len(chunk)} ключей")
     return file_names
-
 
 def load_json(path):
     if os.path.exists(path):
@@ -549,7 +552,6 @@ def load_json(path):
             pass
     return {}
 
-
 def save_json(path, data):
     try:
         with open(path, "w", encoding="utf-8") as f:
@@ -557,12 +559,15 @@ def save_json(path, data):
     except Exception:
         pass
 
-
 def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, euro_all_files):
     GITHUB_USER_REPO = "kort0881/vpn-checker-backend"
     BRANCH = "main"
     BASE_RAW = f"https://raw.githubusercontent.com/{GITHUB_USER_REPO}/{BRANCH}"
     subs_lines = []
+
+    # Добавляем временную метку, чтобы файл всегда обновлялся
+    subs_lines.append(f"# Generated: {datetime.utcnow().isoformat()} UTC")
+    subs_lines.append("")
 
     def nonempty_files(folder, filenames):
         out = []
@@ -633,7 +638,6 @@ def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, eu
         if line:
             print(f"  {line}")
     return subs_path
-
 
 # ==================== MAIN ====================
 
@@ -798,7 +802,6 @@ if __name__ == "__main__":
         print(f"  {kind:8s}: {n:5d}  ({n * 100 // total_err}%)")
 
     print("\n✅ SUCCESS: FAST/ALL + WHITE/BLACK GENERATED")
-
 
 
 
