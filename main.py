@@ -11,7 +11,7 @@ import websocket
 import shutil
 import threading
 import urllib.parse
-from datetime import datetime
+from datetime import datetime, timezone
 from urllib.parse import unquote
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
@@ -477,7 +477,7 @@ def make_final_key(k_id, latency, country):
     title_full = f"{title_ru} {country}" if country and country != "UNKNOWN" else title_ru
     info_str = f"[{latency}ms {title_full} {flag} {MY_CHANNEL}]"
     raw = f"{k_id}#{info_str}"
-    return fix_universal(raw)   # применяем исправление xhttp
+    return fix_universal(raw)
 
 def extract_ping(key_str):
     try:
@@ -492,7 +492,6 @@ def extract_ping(key_str):
 def save_exact(keys, folder, filename):
     path = os.path.join(folder, filename)
     with open(path, "w", encoding="utf-8") as f:
-        # очищаем каждый ключ от type=xhttp
         cleaned = [fix_universal(k.strip()) for k in keys if k and k.strip()]
         f.write("\n".join(cleaned))
     return path
@@ -533,7 +532,6 @@ def save_chunked(keys_list, folder, base_name, chunk_size=None):
     if chunk_size is None:
         chunk_size = CHUNK_LIMIT
     valid_keys = [k.strip() for k in keys_list if k and k.strip()]
-    # тоже очищаем через save_exact позже
     chunks = [valid_keys[i:i + chunk_size] for i in range(0, len(valid_keys), chunk_size)]
     file_names = []
     for idx, chunk in enumerate(chunks, start=1):
@@ -566,7 +564,7 @@ def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, eu
     subs_lines = []
 
     # Добавляем временную метку, чтобы файл всегда обновлялся
-    subs_lines.append(f"# Generated: {datetime.utcnow().isoformat()} UTC")
+    subs_lines.append(f"# Generated: {datetime.now(timezone.utc).isoformat()} UTC")
     subs_lines.append("")
 
     def nonempty_files(folder, filenames):
@@ -577,56 +575,76 @@ def generate_subscriptions_list(ru_fast_files, ru_all_files, euro_fast_files, eu
                 out.append(fname)
         return out
 
+    # RUSSIA FAST
     ru_fast_nonempty = nonempty_files(FOLDER_RU, ru_fast_files)
     if ru_fast_nonempty:
         subs_lines.append("=== 🇷🇺 RUSSIA (FAST) ===")
         for filename in ru_fast_nonempty:
-            subs_lines.append(f"{BASE_RAW}/checked/RU_Best/{filename}")
+            file_path = os.path.join(FOLDER_RU, filename)
+            mtime = int(os.path.getmtime(file_path)) if os.path.exists(file_path) else ""
+            subs_lines.append(f"{BASE_RAW}/checked/RU_Best/{filename}?ts={mtime}")
         subs_lines.append("")
 
+    # RUSSIA ALL
     ru_all_nonempty = nonempty_files(FOLDER_RU, ru_all_files)
     if ru_all_nonempty:
         subs_lines.append("=== 🇷🇺 RUSSIA (ALL) ===")
         for fname in ru_all_nonempty:
-            subs_lines.append(f"{BASE_RAW}/checked/RU_Best/{fname}")
+            file_path = os.path.join(FOLDER_RU, fname)
+            mtime = int(os.path.getmtime(file_path)) if os.path.exists(file_path) else ""
+            subs_lines.append(f"{BASE_RAW}/checked/RU_Best/{fname}?ts={mtime}")
         subs_lines.append("")
 
+    # EUROPE FAST
     euro_fast_nonempty = nonempty_files(FOLDER_EURO, euro_fast_files)
     if euro_fast_nonempty:
         subs_lines.append("=== 🇪🇺 EUROPE (FAST) ===")
         for filename in euro_fast_nonempty:
-            subs_lines.append(f"{BASE_RAW}/checked/My_Euro/{filename}")
+            file_path = os.path.join(FOLDER_EURO, filename)
+            mtime = int(os.path.getmtime(file_path)) if os.path.exists(file_path) else ""
+            subs_lines.append(f"{BASE_RAW}/checked/My_Euro/{filename}?ts={mtime}")
         subs_lines.append("")
 
+    # EUROPE ALL
     euro_all_nonempty = nonempty_files(FOLDER_EURO, euro_all_files)
     if euro_all_nonempty:
         subs_lines.append("=== 🇪🇺 EUROPE (ALL) ===")
         for fname in euro_all_nonempty:
-            subs_lines.append(f"{BASE_RAW}/checked/My_Euro/{fname}")
+            file_path = os.path.join(FOLDER_EURO, fname)
+            mtime = int(os.path.getmtime(file_path)) if os.path.exists(file_path) else ""
+            subs_lines.append(f"{BASE_RAW}/checked/My_Euro/{fname}?ts={mtime}")
         subs_lines.append("")
 
+    # WHITE RUSSIA
     ru_white_path = os.path.join(FOLDER_RU, "ru_white_all_WHITE.txt")
     if os.path.exists(ru_white_path) and os.path.getsize(ru_white_path) > 0:
         subs_lines.append("=== ✅ WHITE RUSSIA (ALL) ===")
-        subs_lines.append(f"{BASE_RAW}/checked/RU_Best/ru_white_all_WHITE.txt")
+        mtime = int(os.path.getmtime(ru_white_path))
+        subs_lines.append(f"{BASE_RAW}/checked/RU_Best/ru_white_all_WHITE.txt?ts={mtime}")
         subs_lines.append("")
 
+    # WHITE EUROPE
     euro_white_path = os.path.join(FOLDER_EURO, "my_euro_all_WHITE.txt")
     if os.path.exists(euro_white_path) and os.path.getsize(euro_white_path) > 0:
         subs_lines.append("=== ✅ WHITE EUROPE (ALL) ===")
-        subs_lines.append(f"{BASE_RAW}/checked/My_Euro/my_euro_all_WHITE.txt")
+        mtime = int(os.path.getmtime(euro_white_path))
+        subs_lines.append(f"{BASE_RAW}/checked/My_Euro/my_euro_all_WHITE.txt?ts={mtime}")
         subs_lines.append("")
 
+    # BLACK RUSSIA
     ru_black_path = os.path.join(FOLDER_RU, "ru_white_all_BLACK.txt")
     if os.path.exists(ru_black_path) and os.path.getsize(ru_black_path) > 0:
         subs_lines.append("=== ⚠️ BLACK RUSSIA (ALL) ===")
-        subs_lines.append(f"{BASE_RAW}/checked/RU_Best/ru_white_all_BLACK.txt")
+        mtime = int(os.path.getmtime(ru_black_path))
+        subs_lines.append(f"{BASE_RAW}/checked/RU_Best/ru_white_all_BLACK.txt?ts={mtime}")
         subs_lines.append("")
 
+    # BLACK EUROPE
     euro_black_path = os.path.join(FOLDER_EURO, "my_euro_all_BLACK.txt")
     if os.path.exists(euro_black_path) and os.path.getsize(euro_black_path) > 0:
         subs_lines.append("=== ⚠️ BLACK EUROPE (ALL) ===")
-        subs_lines.append(f"{BASE_RAW}/checked/My_Euro/my_euro_all_BLACK.txt")
+        mtime = int(os.path.getmtime(euro_black_path))
+        subs_lines.append(f"{BASE_RAW}/checked/My_Euro/my_euro_all_BLACK.txt?ts={mtime}")
 
     subs_path = os.path.join(BASE_DIR, "subscriptions_list.txt")
     with open(subs_path, "w", encoding="utf-8") as f:
