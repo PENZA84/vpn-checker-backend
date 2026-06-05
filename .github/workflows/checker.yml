@@ -51,10 +51,19 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "🤖 Auto-update checked keys [${{ github.run_id }}]"
-          # Важно: многострочный формат для нескольких паттернов
           file_pattern: |
             checked/**/*.txt
             checked/**/*.json
           commit_user_name: "GitHub Actions Bot"
           commit_user_email: "actions@github.com"
           push_options: '--force-with-lease'
+
+      # Запуск постера после того, как все изменения запушены
+      - name: Run Telegram Poster
+        run: python poster.py   # УБЕДИТЕСЬ, ЧТО ЭТО ПРАВИЛЬНОЕ ИМЯ СКРИПТА
+        env:
+          TELEGRAM_BOT_TOKEN_PUBLIC: ${{ secrets.TELEGRAM_BOT_TOKEN_PUBLIC }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_PRIVATE_CHANNEL: ${{ secrets.TELEGRAM_PRIVATE_CHANNEL }}
+          TELEGRAM_DRY_RUN: "0"
+          # добавьте другие переменные, если они используются в постере
